@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 		});
 
 		// For each of the sections in the app, add a tab to the action bar.
-		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
+		for (int i = 0; i < 5; i++) {
 			// Create a tab with text corresponding to the page title defined by
 			// the adapter. Also specify this Activity object, which implements
 			// the TabListener interface, as the callback (listener) for when
@@ -142,11 +142,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 			Locale l = Locale.getDefault();
 			switch (position) {
 				case 0:
-					return getString(R.string.title_section1).toUpperCase(l);
+					return getString(R.string.title_section0).toUpperCase(l);
 				case 1:
-					return getString(R.string.title_section2).toUpperCase(l);
+					return getString(R.string.title_section1).toUpperCase(l);
 				case 2:
+					return getString(R.string.title_section2).toUpperCase(l);
+				case 3:
 					return getString(R.string.title_section3).toUpperCase(l);
+				case 4:
+					return getString(R.string.title_section4).toUpperCase(l);
 			}
 			return null;
 		}

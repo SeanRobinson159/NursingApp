@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">NursingApp</string>
 
+    <string name="title_section0">Vitals</string>
+    <string name="title_section1">Subjective</string>
+    <string name="title_section2">Objective</string>
+    <string name="title_section3">Assessment</string>
+    <string name="title_section4">Plan</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
 
     <string name="hello_world">Hello world!</string>
 
