@@ -4,11 +4,11 @@ package edu.suu.nursingapp;
  * Created by sean on 4/1/15.
  */
 public class patient {
-    private edu.suu.nursingapp.subjective s;
-    private edu.suu.nursingapp.objective o;
-    private edu.suu.nursingapp.assessment a;
-    private edu.suu.nursingapp.plan p;
-    private edu.suu.nursingapp.vitals vitals;
+    private edu.suu.nursingapp.soap.subjective s;
+    private edu.suu.nursingapp.soap.objective o;
+    private edu.suu.nursingapp.soap.assessment a;
+    private edu.suu.nursingapp.soap.plan p;
+    private edu.suu.nursingapp.soap.vitals vitals;
 
     private String lastName;
     private String firstName;
@@ -45,7 +45,7 @@ public class patient {
         this.status = status;
     }
 
-    public patient(edu.suu.nursingapp.subjective s, edu.suu.nursingapp.objective o, edu.suu.nursingapp.assessment a, edu.suu.nursingapp.plan p, edu.suu.nursingapp.vitals vitals, String lastName, String firstName, String gender, String dob, String status) {
+    public patient(edu.suu.nursingapp.soap.subjective s, edu.suu.nursingapp.soap.objective o, edu.suu.nursingapp.soap.assessment a, edu.suu.nursingapp.soap.plan p, edu.suu.nursingapp.soap.vitals vitals, String lastName, String firstName, String gender, String dob, String status) {
         this.s = s;
         this.o = o;
         this.a = a;
@@ -59,43 +59,43 @@ public class patient {
         this.status = status;
     }
 
-    public edu.suu.nursingapp.subjective getS() {
+    public edu.suu.nursingapp.soap.subjective getS() {
         return s;
     }
 
-    public void setS(edu.suu.nursingapp.subjective s) {
+    public void setS(edu.suu.nursingapp.soap.subjective s) {
         this.s = s;
     }
 
-    public edu.suu.nursingapp.objective getO() {
+    public edu.suu.nursingapp.soap.objective getO() {
         return o;
     }
 
-    public void setO(edu.suu.nursingapp.objective o) {
+    public void setO(edu.suu.nursingapp.soap.objective o) {
         this.o = o;
     }
 
-    public edu.suu.nursingapp.assessment getA() {
+    public edu.suu.nursingapp.soap.assessment getA() {
         return a;
     }
 
-    public void setA(edu.suu.nursingapp.assessment a) {
+    public void setA(edu.suu.nursingapp.soap.assessment a) {
         this.a = a;
     }
 
-    public edu.suu.nursingapp.plan getP() {
+    public edu.suu.nursingapp.soap.plan getP() {
         return p;
     }
 
-    public void setP(edu.suu.nursingapp.plan p) {
+    public void setP(edu.suu.nursingapp.soap.plan p) {
         this.p = p;
     }
 
-    public edu.suu.nursingapp.vitals getVitals() {
+    public edu.suu.nursingapp.soap.vitals getVitals() {
         return vitals;
     }
 
-    public void setVitals(edu.suu.nursingapp.vitals vitals) {
+    public void setVitals(edu.suu.nursingapp.soap.vitals vitals) {
         this.vitals = vitals;
     }
 
