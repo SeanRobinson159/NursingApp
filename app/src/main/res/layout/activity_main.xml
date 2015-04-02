@@ -1,7 +1,47 @@
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-                                   xmlns:tools="http://schemas.android.com/tools"
-                                   android:id="@+id/pager"
-                                   android:layout_width="match_parent"
-                                   android:layout_height="match_parent"
-                                   tools:context=".MainActivity"
-                                   android:background="#ffc8c8c8"/>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffc8c8c8"
+              android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/app_name"
+        android:id="@+id/tv_loginTitle"
+        android:layout_gravity="center_horizontal"
+        android:textSize="75dp"
+        android:layout_weight="0.19"/>
+
+    <EditText
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_username"
+        android:layout_gravity="center_horizontal"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/username"
+        android:textSize="50dp"/>
+
+    <EditText
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/et_password"
+        android:layout_gravity="center_horizontal"
+        android:password="true"
+        android:hint="@string/password"
+        android:textSize="50dp"/>
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/btn_login"
+        android:layout_gravity="center_horizontal"
+        android:textSize="40dp"
+        android:onClick="login"/>
+</LinearLayout>
