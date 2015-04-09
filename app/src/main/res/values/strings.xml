@@ -37,4 +37,10 @@
     <string name="bmp">bmp</string>
     <string name="rpm">rpm</string>
     <string name="patient_summary">Patient Summary . . .</string>
+    <string name="cc">Chief Complaint</string>
+    <string name="pmh">Past Medical History</string>
+    <string name="fmh">Family Medical History</string>
+    <string name="sh">Social History</string>
+    <string name="meds">Medications</string>
+    <string name="ros">Review of Systems</string>
 </resources>
