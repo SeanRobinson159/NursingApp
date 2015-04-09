@@ -1,9 +1,11 @@
 package edu.suu.nursingapp;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -15,8 +17,8 @@ public class patientListActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-        loadPatients();
-        setupTheView();
+//        loadPatients();
+//        setupTheView();
 
         setContentView(R.layout.patient_list);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -47,6 +49,11 @@ public class patientListActivity extends ActionBarActivity {
 
 
     }
+
+	public void TabbedView(View v) {
+		Intent intent = new Intent(this, soapActivity.class);
+		startActivity(intent);
+	}
 
 
 }

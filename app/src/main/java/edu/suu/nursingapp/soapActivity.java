@@ -1,23 +1,21 @@
 package edu.suu.nursingapp;
 
-import java.util.Locale;
-
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import java.util.Locale;
 
 
 public class soapActivity extends ActionBarActivity implements ActionBar.TabListener {
@@ -41,7 +39,7 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_soap);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 		// Set up the action bar.
 		final ActionBar actionBar = getSupportActionBar();
@@ -130,13 +128,26 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 		public Fragment getItem(int position) {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class below).
+
+			switch (position) {
+				case 0:
+					return new vitalsFragment();
+				case 1:
+					//return new subjectiveFragment();
+				case 2:
+					//return new objectiveFragment();
+				case 3:
+					//return new assessmentFragment();
+				case 4:
+					//return new planFragment();
+			}
 			return PlaceholderFragment.newInstance(position + 1);
 		}
 
 		@Override
 		public int getCount() {
-			// Show 3 total pages.
-			return 3;
+			// Show 5 total pages.
+			return 5;
 		}
 
 		@Override

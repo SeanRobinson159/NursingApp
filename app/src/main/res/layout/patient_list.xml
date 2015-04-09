@@ -598,6 +598,19 @@
                 android:gravity="center"/>
         </TableRow>
 
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button"
+                android:onClick="TabbedView"
+                android:layout_column="2"/>
+        </TableRow>
+
     </TableLayout>
 
 </LinearLayout>
