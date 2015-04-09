@@ -1,4 +1,4 @@
-package edu.suu.nursingapp.soap;
+package edu.suu.nursingapp.objects.soap;
 
 /**
  * Created by carleebunn on 3/31/2015.

@@ -3,10 +3,11 @@ package edu.suu.nursingapp;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import edu.suu.nursingapp.objects.patient;
 
 /**
  * Created by sean on 4/1/15.

@@ -17,6 +17,9 @@ import android.view.ViewGroup;
 
 import java.util.Locale;
 
+import edu.suu.nursingapp.fragment.*;
+
+
 
 public class soapActivity extends ActionBarActivity implements ActionBar.TabListener {
 
@@ -133,13 +136,13 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 				case 0:
 					return new vitalsFragment();
 				case 1:
-					//return new subjectiveFragment();
+					return new subjectiveFragment();
 				case 2:
-					//return new objectiveFragment();
+					return new objectiveFragment();
 				case 3:
-					//return new assessmentFragment();
+					return new assessmentFragment();
 				case 4:
-					//return new planFragment();
+					return new planFragment();
 			}
 			return PlaceholderFragment.newInstance(position + 1);
 		}

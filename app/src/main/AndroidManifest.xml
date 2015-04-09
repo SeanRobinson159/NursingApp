@@ -20,7 +20,6 @@
         <activity android:name=".soapActivity"/>
         <activity android:name=".patientListActivity"/>
 
-
     </application>
 
 </manifest>
