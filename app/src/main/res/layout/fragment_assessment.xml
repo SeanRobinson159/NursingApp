@@ -1,7 +1,385 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity$PlaceholderFragment">
 
-</LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/general"
+                android:id="@+id/textGeneral" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkGeneral"
+                android:layout_toRightOf="@id/textGeneral"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/textGeneral"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editGeneral"
+                android:layout_below="@+id/textGeneral"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/HEENT"
+                android:id="@+id/textHEENT"
+                android:layout_below="@+id/editGeneral"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkHEENT"
+                android:layout_toRightOf="@id/textHEENT"
+                android:layout_toEndOf="@+id/textHEENT"
+                android:layout_below="@+id/editGeneral"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editHEENT"
+                android:layout_below="@+id/textHEENT"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/neck"
+                android:id="@+id/textNeck"
+                android:layout_below="@+id/editHEENT"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkNeck"
+                android:layout_toRightOf="@id/textNeck"
+                android:layout_toEndOf="@+id/textNeck"
+                android:layout_below="@+id/editHEENT"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editNeck"
+                android:layout_below="@+id/textNeck"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cardiac"
+                android:id="@+id/textCardiac"
+                android:layout_below="@+id/editNeck"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkCardiac"
+                android:layout_toRightOf="@id/textCardiac"
+                android:layout_toEndOf="@+id/textCardiac"
+                android:layout_below="@+id/editNeck"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editCardiac"
+                android:layout_below="@+id/textCardiac"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/pulmonary"
+                android:id="@+id/textPulmonary"
+                android:layout_below="@+id/editCardiac"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkPulmonary"
+                android:layout_toRightOf="@id/textPulmonary"
+                android:layout_toEndOf="@+id/textPulmonary"
+                android:layout_below="@+id/editCardiac"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editPulmonary"
+                android:layout_below="@+id/textPulmonary"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/abdominal"
+                android:id="@+id/textAbdominal"
+                android:layout_below="@+id/editPulmonary"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkAbdominal"
+                android:layout_toRightOf="@id/textAbdominal"
+                android:layout_toEndOf="@+id/textAbdominal"
+                android:layout_below="@+id/editPulmonary"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editAbdominal"
+                android:layout_below="@+id/textAbdominal"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/genitourinary"
+                android:id="@+id/textGenitourinary"
+                android:layout_below="@+id/editAbdominal"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkGenitourinary"
+                android:layout_toRightOf="@id/textGenitourinary"
+                android:layout_toEndOf="@+id/textGenitourinary"
+                android:layout_below="@+id/editAbdominal"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editGenitourinary"
+                android:layout_below="@+id/textGenitourinary"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/musculoskeletal"
+                android:id="@+id/textMusculoskeletal"
+                android:layout_below="@+id/editGenitourinary"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkMusculoskeletal"
+                android:layout_toRightOf="@id/textMusculoskeletal"
+                android:layout_toEndOf="@+id/textMusculoskeletal"
+                android:layout_below="@+id/editGenitourinary"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editMusculoskeletal"
+                android:layout_below="@+id/textMusculoskeletal"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/neurologic"
+                android:id="@+id/textNeurologic"
+                android:layout_below="@+id/editMusculoskeletal"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkNeurologic"
+                android:layout_toRightOf="@id/textNeurologic"
+                android:layout_toEndOf="@+id/textNeurologic"
+                android:layout_below="@+id/editMusculoskeletal"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editNeurologic"
+                android:layout_below="@+id/textNeurologic"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/integumentary"
+                android:id="@+id/textIntegumentary"
+                android:layout_below="@+id/editNeurologic"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkIntegumentary"
+                android:layout_toRightOf="@id/textIntegumentary"
+                android:layout_toEndOf="@+id/textIntegumentary"
+                android:layout_below="@+id/editNeurologic"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editIntegumentary"
+                android:layout_below="@+id/textIntegumentary"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/psychological"
+                android:id="@+id/textPsychological"
+                android:layout_below="@+id/editIntegumentary"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:id="@+id/checkPsychological"
+                android:layout_toRightOf="@id/textPsychological"
+                android:layout_toEndOf="@+id/textPsychological"
+                android:layout_below="@+id/editIntegumentary"
+                android:layout_marginStart="46dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editPsychological"
+                android:layout_below="@+id/textPsychological"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/labWork"
+                android:id="@+id/textLabWork"
+                android:layout_below="@+id/editPsychological"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editLabWork"
+                android:layout_below="@+id/textLabWork"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/imagingResults"
+                android:id="@+id/textImagingResults"
+                android:layout_below="@+id/editLabWork"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editImagingResults"
+                android:layout_below="@+id/textImagingResults"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/medicalDiagnosis"
+                android:id="@+id/textMedicalDiagnosis"
+                android:layout_below="@+id/editImagingResults"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editMedicalDiagnosis"
+                android:layout_below="@+id/textMedicalDiagnosis"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

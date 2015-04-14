@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NursingApp</string>
+    <string name="app_name">SUU Nursing</string>
 
     <string name="title_section0">Vitals</string>
     <string name="title_section1">Subjective</string>
@@ -43,4 +43,22 @@
     <string name="sh">Social History</string>
     <string name="meds">Medications</string>
     <string name="ros">Review of Systems</string>
+
+    <string name="general">General</string>
+    <string name="HEENT">Head Eyes Ears Nose Throat</string>
+    <string name="neck">Neck</string>
+    <string name="cardiac">Cardiac</string>
+    <string name="pulmonary">Pulmonary</string>
+    <string name="abdominal">Abdominal</string>
+    <string name="genitourinary">Genitourinary</string>
+    <string name="musculoskeletal">Musculoskeletal</string>
+    <string name="neurologic">Neurologic</string>
+    <string name="integumentary">Integumentary</string>
+    <string name="psychological">Psychological</string>
+    <string name="labWork">Lab Work</string>
+    <string name="imagingResults">Imaging Results</string>
+    <string name="medicalDiagnosis">Medical Diagnosis</string>
+    <string name="normal">Normal</string>
+
+
 </resources>
