@@ -1,5 +1,7 @@
 package edu.suu.nursingapp.objects;
 
+import edu.suu.nursingapp.objects.soap.*;
+
 /**
  * Created by sean on 4/1/15.
  */
@@ -18,11 +20,11 @@ public class patient {
 
 
     public patient() {
-        s = null;
-        o = null;
-        a = null;
-        p = null;
-        vitals = null;
+        s = new subjective();
+        o = new objective();
+        a = new assessment();
+        p = new plan();
+        vitals = new vitals();
 
         lastName = "Doe";
         firstName = "John";

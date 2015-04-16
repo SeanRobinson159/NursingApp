@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import edu.suu.nursingapp.controllers.*;
 
 /**
  * Created by sean on 4/1/15.
@@ -19,9 +20,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	public void login(View v) {
-		Intent intent = new Intent(this, patientListActivity.class);
+		Intent intent = new Intent(this, patientController.class);
 		startActivity(intent);
 	}
-
-
 }
