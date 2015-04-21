@@ -103,9 +103,9 @@ public class patientController extends ActionBarActivity {
 				@Override
 				public void onClick(View v){
 					//TODO make this work...
-//					Intent intent = new Intent(myself, soapActivity.class);
-//					intent.putExtra(INTENT_KEY_FROM_PATIENT_LIST, patients[myself.tempVal]);
-//					startActivity(intent);
+					Intent intent = new Intent(myself, soapActivity.class);
+					intent.putExtra(INTENT_KEY_FROM_PATIENT_LIST, patients[myself.tempVal]);
+					startActivity(intent);
 
 				}
 			});
