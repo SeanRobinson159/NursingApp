@@ -1,5 +1,6 @@
 package edu.suu.nursingapp;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,10 +19,19 @@ import android.view.ViewGroup;
 import java.util.Locale;
 
 import edu.suu.nursingapp.fragment.*;
-
+import edu.suu.nursingapp.objects.patient;
 
 
 public class soapActivity extends ActionBarActivity implements ActionBar.TabListener {
+
+	private patient currentPatient;
+
+
+	public patient getPatientVariable(){
+		return currentPatient;
+	}
+
+
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -32,6 +42,7 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
+	public static final int INTENT_KEY_FROM_PATIENT_LIST = 349587;
 
 	/**
 	 * The {@link ViewPager} that will host the section contents.
@@ -203,6 +214,14 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 			return rootView;
 		}
+
+		@Override
+		public void onActivityResult(int requestCode, int resultCode, Intent data){
+			if(requestCode == INTENT_KEY_FROM_PATIENT_LIST){
+
+			}
+		}
+
 	}
 
 }

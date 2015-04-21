@@ -1,9 +1,11 @@
 package edu.suu.nursingapp.objects.soap;
 
+import java.io.Serializable;
+
 /**
  * Created by sean on 4/1/15.
  */
-public class subjective {
+public class subjective implements Serializable{
 
     private String chiefComplaint;
     private String pastMedicalHistory;

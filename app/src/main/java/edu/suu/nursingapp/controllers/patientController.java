@@ -21,8 +21,6 @@ public class patientController extends ActionBarActivity {
 	private patient[] patients;
 	private patientController myself;
 	public static final String INTENT_KEY_FROM_PATIENT_LIST = "asogn13893189efji";
-	private int tempVal;
-
 
 
 	@Override
@@ -37,26 +35,25 @@ public class patientController extends ActionBarActivity {
 
 	}
 
-	public void loadPatients(){
+	public void loadPatients() {
 		//TODO load patients from file, or from server
 		patients = new patient[10];
 	}
 
-	public void setupTheView(){
+	public void setupTheView() {
 		//TODO Make this actually work....
-
 
 
 		TableLayout tLayout = (TableLayout) findViewById(R.id.tableLayout1);
 
-		for(int i = 0; i < patients.length; i++){
+		for (int i = 0; i < patients.length; i++) {
 
 			patients[i] = new patient();
 
 			TableRow tablerow = new TableRow(this);
 			TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
 			tablerow.setLayoutParams(lp);
-			tablerow.setPadding(10,10,10,10);
+			tablerow.setPadding(10, 10, 10, 10);
 			tablerow.setMinimumWidth(1250);
 
 			TextView lastName = new TextView(this);
@@ -95,16 +92,16 @@ public class patientController extends ActionBarActivity {
 			status.setGravity(Gravity.CENTER);
 			tablerow.addView(status);
 
-			tLayout.addView(tablerow , i+2);
+			tLayout.addView(tablerow, i + 2);
 
-			tempVal = i;
+			final int tempVal = i;
 
-			tablerow.setOnClickListener(new View.OnClickListener(){
+			tablerow.setOnClickListener(new View.OnClickListener() {
 				@Override
-				public void onClick(View v){
+				public void onClick(View v) {
 					//TODO make this work...
 					Intent intent = new Intent(myself, soapActivity.class);
-					intent.putExtra(INTENT_KEY_FROM_PATIENT_LIST, patients[myself.tempVal]);
+					intent.putExtra(INTENT_KEY_FROM_PATIENT_LIST, patients[tempVal]);
 					startActivity(intent);
 
 				}

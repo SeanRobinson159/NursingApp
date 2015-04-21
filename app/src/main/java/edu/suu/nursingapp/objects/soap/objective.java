@@ -1,8 +1,8 @@
 package edu.suu.nursingapp.objects.soap;
-import android.os.Parcel;
-import android.os.Parcelable;
 
-public class objective implements Parcelable {
+import java.io.Serializable;
+
+public class objective implements Serializable {
 
 	private String observations;
 
@@ -20,13 +20,5 @@ public class objective implements Parcelable {
 		this.observations = observations;
 	}
 
-	@Override
-	public int describeContents() {
-		return 0;
-	}
 
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(observations);
-	}
 }

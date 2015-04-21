@@ -1,9 +1,11 @@
 package edu.suu.nursingapp.objects.soap;
 
+import java.io.Serializable;
+
 /**
  * Created by carleebunn on 3/31/2015.
  */
-public class vitals {
+public class vitals implements Serializable{
 
     double height;
     double weight;
@@ -13,6 +15,7 @@ public class vitals {
     double temperature;
     int pulse;
     int respRate;
+	String patientSummary;
 
     public double getHeight() {
         return height;

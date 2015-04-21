@@ -1,9 +1,11 @@
 package edu.suu.nursingapp.objects.soap;
 
+import java.io.Serializable;
+
 /**
  * Created by sean on 4/1/15.
  */
-public class assessment {
+public class assessment implements Serializable{
 	String general;
 	String HEENT;
 	String neck;

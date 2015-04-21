@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.suu.nursingapp.R;
+import edu.suu.nursingapp.*;
 
 public class subjectiveFragment extends Fragment {
 

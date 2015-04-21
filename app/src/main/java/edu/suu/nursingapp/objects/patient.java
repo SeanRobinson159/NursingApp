@@ -1,11 +1,13 @@
 package edu.suu.nursingapp.objects;
 
+import java.io.Serializable;
+
 import edu.suu.nursingapp.objects.soap.*;
 
 /**
  * Created by sean on 4/1/15.
  */
-public class patient {
+public class patient implements Serializable{
     private edu.suu.nursingapp.objects.soap.subjective s;
     private edu.suu.nursingapp.objects.soap.objective o;
     private edu.suu.nursingapp.objects.soap.assessment a;
