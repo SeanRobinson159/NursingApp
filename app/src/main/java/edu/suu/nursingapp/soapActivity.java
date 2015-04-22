@@ -1,6 +1,5 @@
 package edu.suu.nursingapp;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,42 +17,39 @@ import android.view.ViewGroup;
 
 import java.util.Locale;
 
-import edu.suu.nursingapp.fragment.*;
+import edu.suu.nursingapp.fragment.assessmentFragment;
+import edu.suu.nursingapp.fragment.objectiveFragment;
+import edu.suu.nursingapp.fragment.planFragment;
+import edu.suu.nursingapp.fragment.subjectiveFragment;
+import edu.suu.nursingapp.fragment.vitalsFragment;
 import edu.suu.nursingapp.objects.patient;
 
 
 public class soapActivity extends ActionBarActivity implements ActionBar.TabListener {
 
-	private patient currentPatient;
+	private static patient currentPatient;
+	SectionsPagerAdapter mSectionsPagerAdapter;
+	ViewPager mViewPager;
 
 
-	public patient getPatientVariable(){
+	public patient getCurrentPatient() {
 		return currentPatient;
 	}
 
+	public void receivePatient(){
+		currentPatient = (patient)getIntent().getSerializableExtra("intentkey");
 
-
-	/**
-	 * The {@link android.support.v4.view.PagerAdapter} that will provide
-	 * fragments for each of the sections. We use a
-	 * {@link FragmentPagerAdapter} derivative, which will keep every
-	 * loaded fragment in memory. If this becomes too memory intensive, it
-	 * may be best to switch to a
-	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-	 */
-	SectionsPagerAdapter mSectionsPagerAdapter;
-	public static final int INTENT_KEY_FROM_PATIENT_LIST = 349587;
-
-	/**
-	 * The {@link ViewPager} that will host the section contents.
-	 */
-	ViewPager mViewPager;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_soap);
 		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+		receivePatient();
+
+
 
 		// Set up the action bar.
 		final ActionBar actionBar = getSupportActionBar();
@@ -90,7 +86,6 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 		}
 	}
 
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -122,10 +117,12 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 
 	@Override
 	public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
 	}
 
 	@Override
 	public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
 	}
 
 	/**
@@ -214,14 +211,8 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 			return rootView;
 		}
-
-		@Override
-		public void onActivityResult(int requestCode, int resultCode, Intent data){
-			if(requestCode == INTENT_KEY_FROM_PATIENT_LIST){
-
-			}
-		}
-
 	}
 
 }
+
+

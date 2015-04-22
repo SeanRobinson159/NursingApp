@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.EditText;
+
 import edu.suu.nursingapp.controllers.*;
 
 /**
@@ -20,7 +22,16 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	public void login(View v) {
-		Intent intent = new Intent(this, patientController.class);
-		startActivity(intent);
+		EditText userName = (EditText)findViewById(R.id.et_username);
+		EditText password = (EditText)findViewById(R.id.et_password);
+
+		if(userName.getText().toString().equals("Teacher") && password.getText().toString().equals("password")){
+			Intent intent = new Intent(this, teacherViewController.class);
+			startActivity(intent);
+		}
+		else {
+			Intent intent = new Intent(this, patientController.class);
+			startActivity(intent);
+		}
 	}
 }

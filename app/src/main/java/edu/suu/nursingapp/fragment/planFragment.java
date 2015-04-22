@@ -24,8 +24,7 @@ public class planFragment extends Fragment {
 	public void clickSubmit(View v){
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 
-		nameValuePairs.add(new BasicNameValuePair("patientName", ((soapActivity)getActivity()).getThis()));
-		int a = ((soapActivity) getActivity()).getThis();
+		nameValuePairs.add(new BasicNameValuePair("firstName", ((soapActivity)getActivity()).getCurrentPatient().getFirstName()));
 	}
 
 }
