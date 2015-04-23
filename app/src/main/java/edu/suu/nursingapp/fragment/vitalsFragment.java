@@ -48,4 +48,18 @@ public class vitalsFragment extends Fragment {
 //		weight.setText(height.getText());
 		}
 	}
+
+
+	public void saveVitals(){
+		System.out.println("*******************************************");
+		System.out.println("SaveVitals");
+//		currentPatient.getVitals().setHeight();
+//		currentPatient.getVitals().setWeight();
+//		currentPatient.getVitals().setBmi();
+//		currentPatient.getVitals().setBloodPressure1();
+//		currentPatient.getVitals().setBloodPressure2();
+//		currentPatient.getVitals().setTemperature();
+//		currentPatient.getVitals().setPulse();
+//		currentPatient.getVitals().setRespRate();
+	}
 }

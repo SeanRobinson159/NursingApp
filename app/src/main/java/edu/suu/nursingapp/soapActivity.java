@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import edu.suu.nursingapp.fragment.assessmentFragment;
@@ -32,12 +34,27 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 	ViewPager mViewPager;
 
 
-	public patient getCurrentPatient() {
+	public void savePatient() {
+		FragmentManager fm = getSupportFragmentManager();
+		List fragments = fm.getFragments();
+		vitalsFragment vf = (vitalsFragment)fragments.get(0);
+		vf.saveVitals();
+		subjectiveFragment sf = (subjectiveFragment) fragments.get(1);
+		sf.saveSubjective();
+		objectiveFragment of = (objectiveFragment) fragments.get(2);
+		of.saveObjective();
+		assessmentFragment af = (assessmentFragment) fragments.get(3);
+		af.saveAssessment();
+		planFragment pf = (planFragment) fragments.get(4);
+		pf.savePlan();
+	}
+
+	public static patient getCurrentPatient() {
 		return currentPatient;
 	}
 
-	public void receivePatient(){
-		currentPatient = (patient)getIntent().getSerializableExtra("intentkey");
+	public void receivePatient() {
+		currentPatient = (patient) getIntent().getSerializableExtra("intentkey");
 
 	}
 
@@ -48,7 +65,6 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 		receivePatient();
-
 
 
 		// Set up the action bar.
