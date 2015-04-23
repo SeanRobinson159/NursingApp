@@ -7,20 +7,27 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.suu.nursingapp.R;
-import edu.suu.nursingapp.*;
 import edu.suu.nursingapp.objects.patient;
+import edu.suu.nursingapp.soapActivity;
 
 public class assessmentFragment extends Fragment {
 	private patient currentPatient;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-	    currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
-	    return inflater.inflate(R.layout.fragment_assessment, container, false);
-    }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+		return inflater.inflate(R.layout.fragment_assessment, container, false);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+	}
 
 
-	public void saveAssessment(){
+	public void saveAssessment() {
 		System.out.println("*******************************************");
 		System.out.println("SaveAssessment");
 //		currentPatient.getA().setGeneral();
@@ -50,6 +57,15 @@ public class assessmentFragment extends Fragment {
 //		currentPatient.getA().setNeurologicNormal();
 //		currentPatient.getA().setIntegumentaryNormal();
 //		currentPatient.getA().setPsychologicalNormal();
+
+		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
+
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		saveAssessment();
 	}
 
 

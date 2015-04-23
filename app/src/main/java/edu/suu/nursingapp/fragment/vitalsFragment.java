@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
-import edu.suu.nursingapp.objects.soap.vitals;
 import edu.suu.nursingapp.soapActivity;
 
 
@@ -34,32 +33,46 @@ public class vitalsFragment extends Fragment {
 	@Override
 	public void onPause() {
 		super.onPause();
-		EditText height = (EditText) getView().findViewById(R.id.heightEditText);
-		if (currentPatient.getVitals() == null) {
-			currentPatient.setVitals(new vitals());
-		}
-		if (!height.getText().toString().equals("")) {
+		saveVitals();
 
-			currentPatient.getVitals().setHeight(Double.parseDouble(height.getText().toString()));
-			System.out.println(currentPatient.getVitals().getHeight());
-
-
-//		EditText weight = (EditText) getView().findViewById(R.id.vitals_weight);
-//		weight.setText(height.getText());
-		}
 	}
 
+	@Override
+	public void onResume() {
+		super.onResume();
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+	}
 
-	public void saveVitals(){
+	public void saveVitals() {
 		System.out.println("*******************************************");
 		System.out.println("SaveVitals");
-//		currentPatient.getVitals().setHeight();
-//		currentPatient.getVitals().setWeight();
-//		currentPatient.getVitals().setBmi();
-//		currentPatient.getVitals().setBloodPressure1();
-//		currentPatient.getVitals().setBloodPressure2();
-//		currentPatient.getVitals().setTemperature();
-//		currentPatient.getVitals().setPulse();
-//		currentPatient.getVitals().setRespRate();
+		try {
+			EditText height = (EditText) getView().findViewById(R.id.heightEditText);
+			EditText weight = (EditText) getView().findViewById(R.id.weightEditText);
+			EditText bmi = (EditText) getView().findViewById(R.id.bmiEditText);
+			EditText bp1 = (EditText) getView().findViewById(R.id.bp1EditText);
+			EditText bp2 = (EditText) getView().findViewById(R.id.bp2EditText);
+			EditText temp = (EditText) getView().findViewById(R.id.tempEditText);
+			EditText pulse = (EditText) getView().findViewById(R.id.pulseEditText);
+			EditText rr = (EditText) getView().findViewById(R.id.rrEditText);
+
+			currentPatient.getVitals().setHeight(Double.parseDouble(height.getText().toString()));
+			currentPatient.getVitals().setWeight(Double.parseDouble(weight.getText().toString()));
+			currentPatient.getVitals().setBmi(Integer.parseInt(bmi.getText().toString()));
+			currentPatient.getVitals().setBloodPressure1(Integer.parseInt(bp1.getText().toString()));
+			currentPatient.getVitals().setBloodPressure2(Integer.parseInt(bp2.getText().toString()));
+			currentPatient.getVitals().setTemperature(Integer.parseInt(temp.getText().toString()));
+			currentPatient.getVitals().setPulse(Integer.parseInt(pulse.getText().toString()));
+			currentPatient.getVitals().setRespRate(Integer.parseInt(rr.getText().toString()));
+
+			((soapActivity) getActivity()).setCurrentPatient(currentPatient);
+
+
+		} catch (NullPointerException e) {
+			System.out.println("******IT BROKE******");
+		} catch (NumberFormatException e) {
+			System.out.println("******IT BROKE******");
+
+		}
 	}
 }

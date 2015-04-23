@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/vitals_weight"/>
+                    android:id="@+id/weightEditText"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -137,15 +137,15 @@
                     android:text="@string/lb"
                     android:id="@+id/textView10"
                     android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@+id/vitals_weight"
-                    android:layout_toEndOf="@+id/vitals_weight"/>
+                    android:layout_toRightOf="@+id/weightEditText"
+                    android:layout_toEndOf="@+id/weightEditText"/>
 
             </RelativeLayout>
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText3"
+                android:id="@+id/bmiEditText"
                 android:layout_column="2"
                 android:paddingRight="10dp"
                 android:layout_marginRight="10dp"
@@ -158,15 +158,15 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/editText4"/>
+                    android:id="@+id/bp1EditText"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="@string/slash"
-                    android:layout_toRightOf="@+id/editText4"
-                    android:layout_toEndOf="@id/editText4"
+                    android:layout_toRightOf="@+id/bp1EditText"
+                    android:layout_toEndOf="@id/bp1EditText"
                     android:id="@+id/textView11"/>
 
                 <EditText
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/editText5"
+                    android:id="@+id/bp2EditText"
                     android:layout_toRightOf="@id/textView11"
                     android:layout_toEndOf="@id/textView11"/>
 
@@ -183,8 +183,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/mm_hg"
-                    android:layout_toRightOf="@+id/editText5"
-                    android:layout_toEndOf="@+id/editText5"
+                    android:layout_toRightOf="@+id/bp2EditText"
+                    android:layout_toEndOf="@+id/bp2EditText"
                     android:id="@+id/textView12"/>
             </RelativeLayout>
 
@@ -195,15 +195,15 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/editText6"/>
+                    android:id="@+id/tempEditText"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/f"
-                    android:layout_toRightOf="@+id/editText6"
-                    android:layout_toEndOf="@+id/editText6"
+                    android:layout_toRightOf="@+id/tempEditText"
+                    android:layout_toEndOf="@+id/tempEditText"
                     android:id="@+id/textView13"/>
 
             </RelativeLayout>
@@ -215,15 +215,15 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/editText7"/>
+                    android:id="@+id/pulseEditText"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/bmp"
-                    android:layout_toRightOf="@+id/editText7"
-                    android:layout_toEndOf="@+id/editText7"
+                    android:layout_toRightOf="@+id/pulseEditText"
+                    android:layout_toEndOf="@+id/pulseEditText"
                     android:id="@+id/textView14"/>
 
             </RelativeLayout>
@@ -235,15 +235,15 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/editText8"/>
+                    android:id="@+id/rrEditText"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/rpm"
-                    android:layout_toRightOf="@+id/editText8"
-                    android:layout_toEndOf="@+id/editText8"
+                    android:layout_toRightOf="@+id/rrEditText"
+                    android:layout_toEndOf="@+id/rrEditText"
                     android:id="@+id/textView15"/>
 
             </RelativeLayout>

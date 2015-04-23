@@ -5,27 +5,29 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import edu.suu.nursingapp.*;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.util.ArrayList;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
+import edu.suu.nursingapp.soapActivity;
 
 public class planFragment extends Fragment {
 	private patient currentPatient;
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-	    currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
-	    return inflater.inflate(R.layout.fragment_plan, container, false);
-    }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+		return inflater.inflate(R.layout.fragment_plan, container, false);
+	}
 
-	public void savePlan(){
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+	}
+
+	public void savePlan() {
 		System.out.println("*******************************************");
 		System.out.println("SavePlan");
 //		currentPatient.getP().setND();
@@ -41,12 +43,15 @@ public class planFragment extends Fragment {
 //		currentPatient.getP().setEvaluation2();
 //		currentPatient.getP().setEvaluation3();
 
+		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
+
 
 	}
 
 	@Override
-	public void onDetach(){
-		((soapActivity)getActivity()).savePatient();
+	public void onPause() {
+		super.onPause();
+		savePlan();
 	}
 
 }

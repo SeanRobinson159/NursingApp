@@ -7,22 +7,28 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.suu.nursingapp.R;
-import edu.suu.nursingapp.*;
 import edu.suu.nursingapp.objects.patient;
+import edu.suu.nursingapp.soapActivity;
 
 public class subjectiveFragment extends Fragment {
 
 	private patient currentPatient;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-	    currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
 
-	    return inflater.inflate(R.layout.fragment_subjective, container, false);
-    }
+		return inflater.inflate(R.layout.fragment_subjective, container, false);
+	}
 
+	@Override
+	public void onResume() {
+		super.onResume();
 
-	public void saveSubjective(){
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+	}
+
+	public void saveSubjective() {
 		System.out.println("*******************************************");
 		System.out.println("SaveSubjective");
 //		currentPatient.getS().setChiefComplaint();
@@ -31,5 +37,14 @@ public class subjectiveFragment extends Fragment {
 //		currentPatient.getS().setSocialHistory();
 //		currentPatient.getS().setMedications();
 //		currentPatient.getS().setReviewOfSystems();
+
+		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
+
+	}
+
+	@Override
+	public void onPause(){
+		super.onPause();
+		saveSubjective();
 	}
 }

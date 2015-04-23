@@ -15,8 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 import edu.suu.nursingapp.fragment.assessmentFragment;
@@ -32,21 +30,30 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 	private static patient currentPatient;
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
+	String vitalsTag, subjectiveTag, objectiveTag, assessmentTag, planTag;
 
 
 	public void savePatient() {
 		FragmentManager fm = getSupportFragmentManager();
-		List fragments = fm.getFragments();
-		vitalsFragment vf = (vitalsFragment)fragments.get(0);
+		vitalsFragment vf = (vitalsFragment) fm.findFragmentByTag(vitalsTag);
 		vf.saveVitals();
-		subjectiveFragment sf = (subjectiveFragment) fragments.get(1);
+
+		subjectiveFragment sf = (subjectiveFragment) fm.findFragmentByTag(subjectiveTag);
 		sf.saveSubjective();
-		objectiveFragment of = (objectiveFragment) fragments.get(2);
+
+		objectiveFragment of = (objectiveFragment) fm.findFragmentByTag(objectiveTag);
 		of.saveObjective();
-		assessmentFragment af = (assessmentFragment) fragments.get(3);
+
+		assessmentFragment af = (assessmentFragment) fm.findFragmentByTag(assessmentTag);
 		af.saveAssessment();
-		planFragment pf = (planFragment) fragments.get(4);
+
+		planFragment pf = (planFragment) fm.findFragmentByTag(planTag);
 		pf.savePlan();
+	}
+
+	public void setCurrentPatient(patient currentPatient) {
+		this.currentPatient = currentPatient;
+		System.out.println("************Save complete***********");
 	}
 
 	public static patient getCurrentPatient() {
@@ -158,15 +165,25 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 
 			switch (position) {
 				case 0:
-					return new vitalsFragment();
+					vitalsFragment vf = new vitalsFragment();
+					vitalsTag = vf.getTag();
+					return vf;
 				case 1:
-					return new subjectiveFragment();
+					subjectiveFragment sf = new subjectiveFragment();
+					subjectiveTag = sf.getTag();
+					return sf;
 				case 2:
-					return new objectiveFragment();
+					objectiveFragment of = new objectiveFragment();
+					objectiveTag = of.getTag();
+					return of;
 				case 3:
-					return new assessmentFragment();
+					assessmentFragment af = new assessmentFragment();
+					assessmentTag = af.getTag();
+					return af;
 				case 4:
-					return new planFragment();
+					planFragment pf = new planFragment();
+					planTag = pf.getTag();
+					return pf;
 			}
 			return PlaceholderFragment.newInstance(position + 1);
 		}

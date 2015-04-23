@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
@@ -19,9 +20,27 @@ public class objectiveFragment extends Fragment {
 		return inflater.inflate(R.layout.fragment_objective, container, false);
 	}
 
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+	}
+
 	public void saveObjective() {
 		System.out.println("*******************************************");
 		System.out.println("SaveObjective");
-//		currentPatient.getO().setObservations();
+
+		EditText observation = (EditText) getView().findViewById(R.id.objectiveEditText);
+		currentPatient.getO().setObservations(observation.getText().toString());
+
+		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
+
+	}
+
+	@Override
+	public void onPause(){
+		super.onPause();
+		saveObjective();
 	}
 }
