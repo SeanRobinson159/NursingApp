@@ -22,7 +22,6 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import edu.suu.nursingapp.controllers.patientController;
 import edu.suu.nursingapp.fragment.assessmentFragment;
 import edu.suu.nursingapp.fragment.objectiveFragment;
 import edu.suu.nursingapp.fragment.planFragment;
