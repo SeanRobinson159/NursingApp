@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
@@ -12,6 +13,7 @@ import edu.suu.nursingapp.soapActivity;
 
 public class planFragment extends Fragment {
 	private patient currentPatient;
+
 
 
 	@Override
@@ -55,5 +57,7 @@ public class planFragment extends Fragment {
 		super.onPause();
 		savePlan();
 	}
+
+
 
 }

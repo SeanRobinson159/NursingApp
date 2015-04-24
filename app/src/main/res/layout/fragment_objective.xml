@@ -11,17 +11,28 @@
                 tools:context=".MainActivity$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/objectiveTextView"
+        android:text="Observations"
+        android:textSize="30dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="350dp"
+        android:layout_height="60dp"/>
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
         android:id="@+id/objectiveEditText"
+        android:layout_below="@+id/objectiveTextView"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:background="#ffffffff"
+        android:editable="true"
+        android:enabled="true"
+        android:nestedScrollingEnabled="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
+
 
 </RelativeLayout>
