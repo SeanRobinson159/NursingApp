@@ -20,6 +20,7 @@ public class patient implements Serializable {
 	private String gender;
 	private String dob;
 	private String status;
+	private String studentName;
 
 	public patient() {
 		s = new subjective();
@@ -27,6 +28,7 @@ public class patient implements Serializable {
 		a = new assessment();
 		p = new plan();
 		vitals = new vitals();
+		studentName = "NO NAME";
 
 		lastName = "Doe";
 		firstName = "John";
@@ -142,5 +144,13 @@ public class patient implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 }

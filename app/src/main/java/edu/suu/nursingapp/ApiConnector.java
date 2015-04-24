@@ -1,5 +1,6 @@
 package edu.suu.nursingapp;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import org.apache.http.HttpEntity;
@@ -17,6 +18,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 
 import edu.suu.nursingapp.objects.patient;
 import edu.suu.nursingapp.objects.soap.assessment;
@@ -30,10 +34,13 @@ import edu.suu.nursingapp.objects.soap.vitals;
  */
 public class ApiConnector {
 
+	private static patient whoami;
+	private URL url;
+
 	public JSONArray GetAllTests() {
 		// URL for getting all Tests
 
-		String url = "http://192.168.0.7/~tahseen0amin/Tutorial/getAllCustomers.php";
+		String url = "http://134.250.253.207/createPatient.php";
 
 		// Get HttpResponse Object from url.
 		// Get HttpEntity from Http Response Object
@@ -86,11 +93,26 @@ public class ApiConnector {
 
 	}
 
-	public static void sendJSON(patient p) {
+	public void sendJSON(patient p){
+		whoami = p;
+		try {
+			url = new URL("http://134.250.253.207/createPatient.php");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+
+		new makethiswork().execute(url);
+
+
+	}
+
+	public static void sendJSON2() {
+		patient p = whoami;
 		HttpClient client = new DefaultHttpClient();
 		HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
-		String URL = "http://web-billings.com/testPost.php";
+
 		try {
+			URI URL = new URI("http://134.250.253.207/createPatient.php");
 			HttpPost post = new HttpPost(URL);
 
 			vitals v = p.getVitals();
@@ -102,7 +124,7 @@ public class ApiConnector {
 			JSONObject jObject = new JSONObject();
 			//Creating the jsonObject
 			//Patient
-			// jObject.put("studentID", );
+			jObject.put("studentID", p.getStudentName());
 			jObject.put("patientID", p.getFirstName() + p.getLastName());
 			jObject.put("gender", p.getGender());
 			jObject.put("dob", p.getDob());
@@ -170,6 +192,17 @@ public class ApiConnector {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	private class makethiswork extends AsyncTask<URL, Integer, Long> {
+
+
+		@Override
+		protected Long doInBackground(URL... params) {
+			sendJSON2();
+			cancel(true);
+			return null;
 		}
 	}
 }

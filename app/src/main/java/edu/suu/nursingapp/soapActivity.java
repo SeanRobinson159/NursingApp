@@ -65,6 +65,15 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
 
 	}
 
+	public void pushCurrentPatientToServer(View v){
+		ApiConnector api = new ApiConnector();
+		api.sendJSON(currentPatient);
+		System.out.println("************PUSH COMPLETE***********");
+
+	}
+
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

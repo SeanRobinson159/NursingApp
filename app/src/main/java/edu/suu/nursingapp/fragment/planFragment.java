@@ -30,6 +30,8 @@ public class planFragment extends Fragment {
 	public void savePlan() {
 		System.out.println("*******************************************");
 		System.out.println("SavePlan");
+
+
 //		currentPatient.getP().setND();
 //		currentPatient.getP().setND2();
 //		currentPatient.getP().setND3();

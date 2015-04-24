@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
@@ -30,6 +31,13 @@ public class assessmentFragment extends Fragment {
 	public void saveAssessment() {
 		System.out.println("*******************************************");
 		System.out.println("SaveAssessment");
+
+//		EditText
+
+
+
+
+
 //		currentPatient.getA().setGeneral();
 //		currentPatient.getA().setHEENT();
 //		currentPatient.getA().setNeck();
@@ -58,7 +66,7 @@ public class assessmentFragment extends Fragment {
 //		currentPatient.getA().setIntegumentaryNormal();
 //		currentPatient.getA().setPsychologicalNormal();
 
-		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
+				((soapActivity) getActivity()).setCurrentPatient(currentPatient);
 
 	}
 

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
@@ -31,19 +32,28 @@ public class subjectiveFragment extends Fragment {
 	public void saveSubjective() {
 		System.out.println("*******************************************");
 		System.out.println("SaveSubjective");
-//		currentPatient.getS().setChiefComplaint();
-//		currentPatient.getS().setPastMedicalHistory();
-//		currentPatient.getS().setFamilyMedicalHistory();
-//		currentPatient.getS().setSocialHistory();
-//		currentPatient.getS().setMedications();
-//		currentPatient.getS().setReviewOfSystems();
+
+		EditText chiefComplaint = (EditText) getActivity().findViewById(R.id.subjective_cc_edittext);
+		EditText pastMedicalHistory = (EditText) getActivity().findViewById(R.id.subjective_pmh_edittext);
+		EditText familyMedicalHistory = (EditText) getActivity().findViewById(R.id.subjective_fmh_edittext);
+		EditText socialHistory = (EditText) getActivity().findViewById(R.id.subjective_sh_edittext);
+		EditText medications = (EditText) getActivity().findViewById(R.id.subjective_meds_edittext);
+		EditText reviewOfSystems = (EditText) getActivity().findViewById(R.id.subjective_ros_edittext);
+
+
+		currentPatient.getS().setChiefComplaint(chiefComplaint.getText().toString());
+		currentPatient.getS().setPastMedicalHistory(pastMedicalHistory.getText().toString());
+		currentPatient.getS().setFamilyMedicalHistory(familyMedicalHistory.getText().toString());
+		currentPatient.getS().setSocialHistory(socialHistory.getText().toString());
+		currentPatient.getS().setMedications(medications.getText().toString());
+		currentPatient.getS().setReviewOfSystems(reviewOfSystems.getText().toString());
 
 		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
 
 	}
 
 	@Override
-	public void onPause(){
+	public void onPause() {
 		super.onPause();
 		saveSubjective();
 	}

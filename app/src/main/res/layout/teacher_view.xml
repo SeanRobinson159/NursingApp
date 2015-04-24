@@ -1,15 +1,371 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="THIS IS THE TEACHER PAGE"
-        android:id="@+id/textView8"
-        android:layout_gravity="center_horizontal"
-        android:textSize="50dp"/>
-</LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="PatientID"
+                android:id="@+id/PatientID"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="StudentID"
+                android:id="@+id/StudentID"
+                android:layout_below="@+id/PatientID" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Neck"
+                android:id="@+id/neck"
+                android:layout_below="@+id/StudentID" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Cardiac"
+                android:id="@+id/cardiac"
+                android:layout_below="@+id/neck" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Pulmonary"
+                android:id="@+id/pulmonary"
+                android:layout_below="@+id/cardiac" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Abdominal"
+                android:id="@+id/abdominal"
+                android:layout_below="@+id/pulmonary" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Genitourinary"
+                android:id="@+id/genitourinary"
+                android:layout_below="@+id/abdominal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Musculoskeletal"
+                android:id="@+id/musculoskeletal"
+                android:layout_below="@+id/genitourinary" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Neurologic"
+                android:id="@+id/neurologic"
+                android:layout_below="@+id/musculoskeletal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Integumentary"
+                android:id="@+id/integumentary"
+                android:layout_below="@+id/neurologic" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Psychological"
+                android:id="@+id/psychological"
+                android:layout_below="@+id/integumentary" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="LabWork"
+                android:id="@+id/labWork"
+                android:layout_below="@+id/psychological" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="General"
+                android:id="@+id/general"
+                android:layout_below="@+id/labWork" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="ImagingResults"
+                android:id="@+id/imagingResults"
+                android:layout_below="@+id/general" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MedicalDiagnosis"
+                android:id="@+id/medicalDiagnosis"
+                android:layout_below="@+id/imagingResults" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Gender"
+                android:id="@+id/gender"
+                android:layout_below="@+id/medicalDiagnosis" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="lastName"
+                android:id="@+id/lastName"
+                android:layout_below="@+id/gender" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="firstName"
+                android:id="@+id/firstName"
+                android:layout_below="@+id/lastName" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="dob"
+                android:id="@+id/dob"
+                android:layout_below="@+id/firstName" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="status"
+                android:id="@+id/status"
+                android:layout_below="@+id/dob" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="observations"
+                android:id="@+id/observations"
+                android:layout_below="@+id/status" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="ND"
+                android:id="@+id/ND"
+                android:layout_below="@+id/observations" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="ND2"
+                android:id="@+id/ND2"
+                android:layout_below="@+id/ND" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="ND3"
+                android:id="@+id/ND3"
+                android:layout_below="@+id/ND2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Goal"
+                android:id="@+id/Goal"
+                android:layout_below="@+id/ND3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Goal2"
+                android:id="@+id/Goal2"
+                android:layout_below="@+id/Goal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Goal3"
+                android:id="@+id/Goal3"
+                android:layout_below="@+id/Goal2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Intervention"
+                android:id="@+id/Intervention"
+                android:layout_below="@+id/Goal3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Intervention2"
+                android:id="@+id/Intervention2"
+                android:layout_below="@+id/Intervention" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Intervention3"
+                android:id="@+id/Intervention3"
+                android:layout_below="@+id/Intervention2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Evaluation"
+                android:id="@+id/Evaluation"
+                android:layout_below="@+id/Intervention3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Evaluation2"
+                android:id="@+id/Evaluation2"
+                android:layout_below="@+id/Evaluation" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Evaluation3"
+                android:id="@+id/Evaluation3"
+                android:layout_below="@+id/Evaluation2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="chiefComplaint"
+                android:id="@+id/chiefComplaint"
+                android:layout_below="@+id/Evaluation3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="pastMedicalHistory"
+                android:id="@+id/pastMedicalHistory"
+                android:layout_below="@+id/chiefComplaint" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="familyMedicalHistory"
+                android:id="@+id/familyMedicalHistory"
+                android:layout_below="@+id/pastMedicalHistory" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="socialHistory"
+                android:id="@+id/socialHistory"
+                android:layout_below="@+id/familyMedicalHistory" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="medications"
+                android:id="@+id/medications"
+                android:layout_below="@+id/socialHistory" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="allergies"
+                android:id="@+id/allergies"
+                android:layout_below="@+id/medications" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="reviewOfSystems"
+                android:id="@+id/reviewOfSystems"
+                android:layout_below="@+id/allergies" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="height"
+                android:id="@+id/height"
+                android:layout_below="@+id/reviewOfSystems" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="weight"
+                android:id="@+id/weight"
+                android:layout_below="@+id/height" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="bmi"
+                android:id="@+id/bmi"
+                android:layout_below="@+id/weight" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="bloodPressure1"
+                android:id="@+id/bloodPressure1"
+                android:layout_below="@+id/bmi" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="bloodPressure2"
+                android:id="@+id/bloodPressure2"
+                android:layout_below="@+id/bloodPressure1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="temperature"
+                android:id="@+id/temperature"
+                android:layout_below="@+id/bloodPressure2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="pulse"
+                android:id="@+id/pulse"
+                android:layout_below="@+id/temperature" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="respRate"
+                android:id="@+id/respRate"
+                android:layout_below="@+id/pulse" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous"
+                android:id="@+id/previousButton"
+                android:layout_below="@+id/respRate"
+                android:onClick="clickPrevious"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:id="@+id/nextButton"
+                android:layout_below="@+id/previousButton"
+                android:onClick="clickNext"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
