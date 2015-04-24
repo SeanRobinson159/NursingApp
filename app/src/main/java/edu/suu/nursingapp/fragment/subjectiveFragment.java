@@ -39,7 +39,7 @@ public class subjectiveFragment extends Fragment {
 		EditText socialHistory = (EditText) getActivity().findViewById(R.id.subjective_sh_edittext);
 		EditText medications = (EditText) getActivity().findViewById(R.id.subjective_meds_edittext);
 		EditText reviewOfSystems = (EditText) getActivity().findViewById(R.id.subjective_ros_edittext);
-//        EditText allergies = (EditText) getActivity().findViewById(R.id.subjective_allergies_edittext);
+        EditText allergies = (EditText) getActivity().findViewById(R.id.subjective_alg_edittext);
 
 		currentPatient.getS().setChiefComplaint(chiefComplaint.getText().toString());
 		currentPatient.getS().setPastMedicalHistory(pastMedicalHistory.getText().toString());
@@ -47,7 +47,7 @@ public class subjectiveFragment extends Fragment {
 		currentPatient.getS().setSocialHistory(socialHistory.getText().toString());
 		currentPatient.getS().setMedications(medications.getText().toString());
 		currentPatient.getS().setReviewOfSystems(reviewOfSystems.getText().toString());
-//        currentPatient.getS().setAllergies(allergies.getText().toString());
+        currentPatient.getS().setAllergies(allergies.getText().toString());
 
 		((soapActivity) getActivity()).setCurrentPatient(currentPatient);
 

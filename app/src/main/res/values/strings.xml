@@ -59,6 +59,7 @@
     <string name="imagingResults">Imaging Results</string>
     <string name="medicalDiagnosis">Medical Diagnosis</string>
     <string name="normal">Normal</string>
+    <string name="strAlg">Allergies</string>
 
 
 </resources>
