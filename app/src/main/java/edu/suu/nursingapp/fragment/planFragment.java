@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Button;
 
 import edu.suu.nursingapp.R;
 import edu.suu.nursingapp.objects.patient;
@@ -15,11 +16,11 @@ public class planFragment extends Fragment {
     private patient currentPatient;
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
-        return inflater.inflate(R.layout.fragment_plan, container, false);
-    }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		currentPatient = ((soapActivity) getActivity()).getCurrentPatient();
+		return inflater.inflate(R.layout.fragment_plan, container, false);
+	}
 
     @Override
     public void onResume() {
@@ -49,28 +50,10 @@ public class planFragment extends Fragment {
         EditText e3 = (EditText) getView().findViewById(R.id.evalText3);
 
 
-        currentPatient.getP().setND(nd.getText().toString());
-        currentPatient.getP().setND2(nd2.getText().toString());
-        currentPatient.getP().setND3(nd3.getText().toString());
-        currentPatient.getP().setGoal(goal.getText().toString());
-        currentPatient.getP().setGoal2(goal2.getText().toString());
-        currentPatient.getP().setGoal3(goal3.getText().toString());
-        currentPatient.getP().setIntervention(i.getText().toString());
-        currentPatient.getP().setIntervention2(i2.getText().toString());
-        currentPatient.getP().setIntervention3(i3.getText().toString());
-        currentPatient.getP().setEvaluation(e.getText().toString());
-        currentPatient.getP().setEvaluation2(e2.getText().toString());
-        currentPatient.getP().setEvaluation3(e3.getText().toString());
-
-        ((soapActivity) getActivity()).setCurrentPatient(currentPatient);
-
-
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        savePlan();
-    }
+	@Override
+	public void onPause() {
+		super.onPause();
+		savePlan();
+	}
 
 }
