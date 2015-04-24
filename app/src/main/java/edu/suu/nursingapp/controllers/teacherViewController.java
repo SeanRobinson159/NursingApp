@@ -88,6 +88,11 @@ public class teacherViewController extends ActionBarActivity {
 			abdominal.setText("Abdominal: " + s.getString("abdominal"));
 			TextView genitourinary = (TextView) findViewById(R.id.genitourinary);
 			genitourinary.setText("Genitourinary: " + s.getString("genitourinary"));
+
+            TextView musculoskeletal = (TextView) findViewById(R.id.musculoskeletal);
+            musculoskeletal.setText("Musculoskeletal: " + s.getString("musculoskeletal"));
+
+
 			TextView neurologic = (TextView) findViewById(R.id.neurologic);
 			neurologic.setText("Neurologic: " + s.getString("neurologic"));
 			TextView integumentary = (TextView) findViewById(R.id.integumentary);

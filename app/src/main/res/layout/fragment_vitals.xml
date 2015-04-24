@@ -11,15 +11,15 @@
                 tools:context=".MainActivity$PlaceholderFragment"
     >
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
+    <View
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:background="#FF0000FF"/>
 
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:stretchColumns="0,1,2,3,4,5,6,7"
         android:id="@+id/tableLayout">
 
@@ -107,7 +107,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/heightEditText"/>
+                    android:id="@+id/heightEditText"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -128,7 +129,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/weightEditText"/>
+                    android:id="@+id/weightEditText"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -149,7 +151,9 @@
                 android:layout_column="2"
                 android:paddingRight="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"/>
+                android:layout_marginEnd="10dp"
+                android:inputType="numberDecimal"
+                android:text="0" />
 
             <RelativeLayout>
 
@@ -158,7 +162,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/bp1EditText"/>
+                    android:id="@+id/bp1EditText"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -176,7 +181,8 @@
                     android:ems="3"
                     android:id="@+id/bp2EditText"
                     android:layout_toRightOf="@id/textView11"
-                    android:layout_toEndOf="@id/textView11"/>
+                    android:layout_toEndOf="@id/textView11"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -195,7 +201,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/tempEditText"/>
+                    android:id="@+id/tempEditText"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -215,7 +222,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/pulseEditText"/>
+                    android:id="@+id/pulseEditText"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -235,7 +243,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="3"
-                    android:id="@+id/rrEditText"/>
+                    android:id="@+id/rrEditText"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -249,12 +258,49 @@
             </RelativeLayout>
         </TableRow>
 
-    </TableLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vitals_nameRow" >
 
-    <View
-        android:layout_height="1dp"
-        android:layout_width="fill_parent"
-        android:background="#FF0000FF"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Student Name"
+                android:id="@+id/vitals_studentName"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:id="@+id/vitals_studentNameEditText"
+                android:layout_span="3"
+                android:layout_marginRight="100dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Patient Name"
+                android:id="@+id/patientName"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="-50dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:id="@+id/vitals_patientNameEditText"
+                android:layout_span="2"
+                android:layout_marginLeft="-60dp" />
+
+        </TableRow>
+
+    </TableLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -263,8 +309,8 @@
         android:id="@+id/vitals_patientSummary"
         android:layout_below="@+id/tableLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignBaseline="@id/tableLayout"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_alignParentStart="false"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentEnd="false" />
 
 </RelativeLayout>

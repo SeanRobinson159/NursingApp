@@ -5,27 +5,26 @@ import java.io.Serializable;
 /**
  * Created by carleebunn on 3/31/2015.
  */
-public class vitals implements Serializable{
+public class vitals implements Serializable {
 
     double height;
     double weight;
-    int bmi;
-    int bloodPressure1;
-    int bloodPressure2;
+    double bmi;
+    double bloodPressure1;
+    double bloodPressure2;
     double temperature;
-    int pulse;
-    int respRate;
-	String patientSummary;
+    double pulse;
+    double respRate;
+    String patientSummary;
 
     public double getHeight() {
         return height;
     }
 
     public void setHeight(double height) {
-        if(height > 0) {
+        if (height > 0) {
             this.height = height;
-        }
-        else{
+        } else {
             this.height = 0;
         }
     }
@@ -42,11 +41,11 @@ public class vitals implements Serializable{
         }
     }
 
-    public int getBmi() {
+    public double getBmi() {
         return bmi;
     }
 
-    public void setBmi(int bmi) {
+    public void setBmi(double bmi) {
         if (bmi > 0) {
             this.bmi = bmi;
         } else {
@@ -54,11 +53,11 @@ public class vitals implements Serializable{
         }
     }
 
-    public int getBloodPressure1() {
+    public double getBloodPressure1() {
         return bloodPressure1;
     }
 
-    public void setBloodPressure1(int bloodPressure1) {
+    public void setBloodPressure1(double bloodPressure1) {
         if (bloodPressure1 > 0) {
             this.bloodPressure1 = bloodPressure1;
         } else {
@@ -66,11 +65,11 @@ public class vitals implements Serializable{
         }
     }
 
-    public int getBloodPressure2() {
+    public double getBloodPressure2() {
         return bloodPressure2;
     }
 
-    public void setBloodPressure2(int bloodPressure2) {
+    public void setBloodPressure2(double bloodPressure2) {
         if (bloodPressure2 > 0) {
             this.bloodPressure2 = bloodPressure2;
         } else {
@@ -90,11 +89,11 @@ public class vitals implements Serializable{
         }
     }
 
-    public int getPulse() {
+    public double getPulse() {
         return pulse;
     }
 
-    public void setPulse(int pulse) {
+    public void setPulse(double pulse) {
         if (pulse > 0) {
             this.pulse = pulse;
         } else {
@@ -102,11 +101,11 @@ public class vitals implements Serializable{
         }
     }
 
-    public int getRespRate() {
+    public double getRespRate() {
         return respRate;
     }
 
-    public void setRespRate(int respRate) {
+    public void setRespRate(double respRate) {
         if (respRate > 0) {
             this.respRate = respRate;
         } else {
