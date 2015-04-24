@@ -37,62 +37,6 @@ public class ApiConnector {
 	private static patient whoami;
 	private URL url;
 
-	public JSONArray GetAllTests() {
-		// URL for getting all Tests
-
-		String url = "http://134.250.253.207/createPatient.php";
-
-		// Get HttpResponse Object from url.
-		// Get HttpEntity from Http Response Object
-
-		HttpEntity httpEntity = null;
-
-		try {
-
-			DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
-			HttpGet httpGet = new HttpGet(url);
-
-			HttpResponse httpResponse = httpClient.execute(httpGet);
-
-			httpEntity = httpResponse.getEntity();
-
-
-		} catch (ClientProtocolException e) {
-
-			// Signals error in http protocol
-			e.printStackTrace();
-
-			//Log Errors Here
-
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-
-		// Convert HttpEntity into JSON Array
-		JSONArray jsonArray = null;
-
-		if (httpEntity != null) {
-			try {
-				String entityResponse = EntityUtils.toString(httpEntity);
-
-				Log.e("Entity Response  : ", entityResponse);
-
-				jsonArray = new JSONArray(entityResponse);
-
-			} catch (JSONException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		return jsonArray;
-
-
-	}
-
 	public void sendJSON(patient p){
 		whoami = p;
 		try {
@@ -124,8 +68,8 @@ public class ApiConnector {
 			JSONObject jObject = new JSONObject();
 			//Creating the jsonObject
 			//Patient
-			jObject.put("studentID", p.getStudentName());
-			jObject.put("patientID", p.getFirstName() + p.getLastName());
+			jObject.put("StudentID", p.getStudentName());
+			jObject.put("PatientID", p.getPatientID());
 			jObject.put("gender", p.getGender());
 			jObject.put("dob", p.getDob());
 			jObject.put("status", p.getStatus());
@@ -179,8 +123,8 @@ public class ApiConnector {
 			jObject.put("Intervention2", pl.getIntervention2());
 			jObject.put("Intervention3", pl.getIntervention3());
 			jObject.put("Evaluation", pl.getEvaluation());
-			jObject.put("Evalutation2", pl.getEvaluation2());
-			jObject.put("Evalutation3", pl.getEvaluation3());
+			jObject.put("Evaluation2", pl.getEvaluation2());
+			jObject.put("Evaluation3", pl.getEvaluation3());
 
 			//Done Creating the jsonObject
 			StringEntity se = new StringEntity(jObject.toString());
