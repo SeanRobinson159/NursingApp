@@ -163,6 +163,7 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
     }
 
     public void onPopUp(View arg1) {
+        mViewPager.setCurrentItem(0, true);
 
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog);
@@ -185,9 +186,11 @@ public class soapActivity extends ActionBarActivity implements ActionBar.TabList
         });
 
         Button dialogButton2 = (Button) dialog.findViewById(R.id.dialogButtonCancel);
-        dialogButton2.setOnClickListener(new View.OnClickListener() {
+        dialogButton2.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mViewPager.setCurrentItem(4, true);
                 dialog.dismiss();
             }
         });
